@@ -26,8 +26,8 @@ PC 에서는 좌우 버튼을 클릭하여 슬라이더를 이동시키고
 3. SLIDE SET 버튼을 클릭
 	> swipe 기능은 링크 진입 후 개발자 도구 (F12) 를 여신 후 
 	> 개발자 도구 좌측 상단의 2번째 아이콘인 "Toggle device tool bar" (Ctrl + Shift + M)
-	> 모바일 미리보기를 활성화 시킨 후 1~3 순서대로 진행하시면 됩니다.
-	> *아직 destroy 문제가 해결되지 않아서 다른 이미지로 보시려면 새로고침 후 크기를 다시 고른 후 1~3을 진행하셔야 합니다.
+	> 모바일 미리보기를 활성화 시킨 후 1,2,3 순서대로 진행하시면 됩니다.
+	> 아직 destroy 문제가 해결되지 않아서 다른 이미지로 보시려면 새로고침 후 크기를 다시 고른 후 1,2,3을 진행하셔야 합니다.
 
 
 # 1. 사용법
@@ -103,28 +103,28 @@ jquery , jquery.mobile , catSlider 를 순서대로 넣어줍니다.
 이미지로드가 완료 된 후 아래의 함수를 호출하면 슬라이더가 준비됩니다.
 ```javascript
  var setting = {
-	 wrapperTarget   : $('.slide-wrapper'),	// 액자
-     target          : $('.cat-slide'),		// 슬라이더판
-     childtarget     : $('.cat-slide li'),	// 슬라이더 개별요소
+	wrapperTarget   : $('.slide-wrapper'),	// 액자
+     	target          : $('.cat-slide'),	// 슬라이더판
+     	childtarget     : $('.cat-slide li'),	// 슬라이더 개별요소
 
 	// 액자하나에 한슬라이드만 볼때 true
 	// 슬라이드 하나가 가운데 있고 양옆 반씩 볼때는 false
 	// default : false
-     oneImgOnSlide   : false,
+     	oneImgOnSlide   : false,
      
 	// 간격을 줄지 말지 결정 default false
-     space           : true,	
+     	space           : true,	
      
-     // space true 일때 간격px 해당 간격의 2배만큼 간격이 생김니다.
-     spacepx         : 10,		
+     	// space true 일때 간격px 해당 간격의 2배만큼 간격이 생김니다.
+     	spacepx         : 10,		
      
-     leftCallBackFunc : function(){
-	    // 슬라이더가 왼쪽으로 이동 후 실행할 callback 함수
-	    // 사용자가 오른쪽으로 swipe 하면 왼쪽으로 이동합니다.
-     },
-     rightCallBackFunc : function(){
-        // 슬라이더가 오른쪽으로 이동 후 실행할 callback 함수
-     }
+     	leftCallBackFunc : function(){
+		// 슬라이더가 왼쪽으로 이동 후 실행할 callback 함수
+	    	// 사용자가 오른쪽으로 swipe 하면 왼쪽으로 이동합니다.
+     	},
+     	rightCallBackFunc : function(){
+        	// 슬라이더가 오른쪽으로 이동 후 실행할 callback 함수
+     	}
  }
  $.catSlider.init(setting);
 ```
@@ -132,12 +132,12 @@ jquery , jquery.mobile , catSlider 를 순서대로 넣어줍니다.
 화살표를 만들면 아래와 같이 이벤트를 추가하시면 됩니다.
 ```javascript
 $('#prevBtn').on('click',function(){
-	// left
-    $.catSlider.slideMove(true);
+   // left
+   $.catSlider.slideMove(true);
 })
 $('#nextBtn').on('click',function(){
-	// right
-    $.catSlider.slideMove(false);
+   // right
+   $.catSlider.slideMove(false);
 })
 ```
 
@@ -157,13 +157,13 @@ $.catSlider.movePx = 슬라이더 개별요소 width + (슬라이더 간격이 �
 ```javascript
 var setting = {
 	wrapperTarget	: $('.slide-wrapper'),
-	target			: $('.cat-slide'),
-	childtarget		: $('.cat-slide li'),
+	target		: $('.cat-slide'),
+	childtarget	: $('.cat-slide li'),
 	oneImgOnSlide	: true,
-	space			: true,
-	spacepx			: 10,
+	space		: true,
+	spacepx		: 10,
 	setMoveFunc : function(){
-		$.catSlider.movePx = 50
+	   $.catSlider.movePx = 50
 	}
 }
 $.catSlider.init(setting);
